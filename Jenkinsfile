@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('verify version') {
-      steps {
+   stage('Check PHP Version') {
+    steps {
         sh 'php --version'
-      }
     }
+}
   }
 }
