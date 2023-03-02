@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('verify version') {
       steps {
-        winpty 'php --version'
+        winpty php --version
       }
     }
     stage('hello') {
       steps {
-        winpty 'php hello.php'
+        winpty php hello.php
       }
     }
   }
