@@ -1,15 +1,11 @@
+/* Requires the Docker Pipeline plugin */
 pipeline {
-  agent any
-  stages {
-    stage('verify version') {
-      steps {
-        sh 'php --version'
-      }
+    agent { docker { image 'php:8.1.11-alpine' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'php --version'
+            }
+        }
     }
-    stage('hello') {
-      steps {
-        sh 'php hello.php'
-      }
-    }
-  }
 }
