@@ -1,11 +1,15 @@
-/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                bat 'php --version'
-            }
-        }
+  agent any
+  stages {
+    stage('verify version') {
+      steps {
+        bat 'php --version'
+      }
     }
+    stage('hello') {
+      steps {
+        bat 'php hello.php'
+      }
+    }
+  }
 }
